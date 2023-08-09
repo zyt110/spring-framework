@@ -78,7 +78,7 @@ public abstract class BeanFactoryUtils {
 	 * @return the transformed name
 	 * @see BeanFactory#FACTORY_BEAN_PREFIX
 	 */
-	public static String transformedBeanName(String name) {
+	public static String transformedBeanName(String name) {//本质用于去除beanName前面的&  其中有缓存，如果已经去除过的，直接返回去除之后的结果
 		Assert.notNull(name, "'name' must not be null");
 		if (!name.startsWith(BeanFactory.FACTORY_BEAN_PREFIX)) {
 			return name;
